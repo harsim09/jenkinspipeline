@@ -33,7 +33,20 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
+                        timeout(time:5,unit:'DAYS')
+                        {
+                        input message: 'Approve
+                        }
                        build job: 'deploy-to-prod'
+                        post{
+                            success{
+                            echo "Success"
+                            }
+                            failure{
+                            echo "Failure"
+                            }
+                        }  
+                        
                     }
                 }
             }
