@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "cp **/target/*.war localhost:8092:/var/lib/tomcat7/webapps"
+                        build job: 'Deploy-To-Staging'
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "cp -i /home/jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                       build job: 'deploy-to-prod'
                     }
                 }
             }
