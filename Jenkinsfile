@@ -35,7 +35,7 @@ stages{
                     steps {
                         timeout(time:5,unit:'DAYS')
                         {
-                        input message: 'Approve
+                        input message: 'Approve'
                         }
                        build job: 'deploy-to-prod'
                         post{
