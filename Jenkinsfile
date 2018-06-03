@@ -37,8 +37,9 @@ stages{
                         {
                         input message: 'Approve'
                         }
-                    }    
+                       
                     build job: 'deploy-to-prod'
+                    }
                     post{
                         success{
                             echo "Success"
