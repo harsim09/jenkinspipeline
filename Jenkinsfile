@@ -38,7 +38,7 @@ stages{
                         input message: 'Approve'
                         }
                        
-                    build job: 'deploy-to-prod'
+                    build job: 'Deploy-To-Prod'
                     }
                     post{
                         success{
